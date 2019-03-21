@@ -1,0 +1,1 @@
+As a **student** I would like a **recipe generating functionality** so that I can **manage my fridge** and **budget**
