@@ -38,4 +38,12 @@ def items_set_vegan(item_id): # VALITSE JOKU MUU KUIN DONE, MUOKKAA MODELS.PY
     i.vegan = True
     db.session().commit()
     return redirect(url_for("items_index"))
+
+@app.route("/items/<item_id>/delete", methods = ["POST"])
+@login_required
+def item_delete(item_id):
+    i = Item.query.get(item_id)
+    db.session.delete(i)
+    db.session.commit()
+    return redirect(url_for("items_index"))
     

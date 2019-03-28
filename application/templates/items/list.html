@@ -1,21 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <table>
-        <tr>
-            <th>Item</th>
-            <th>Vegan</th>
-        </tr>
-        {% for item in items %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.vegan }}</td>
-            <td>
-                <form method="POST" action="{{ url_for('items_set_vegan', item_id=item.id) }}">
-                    <input type="submit" value="Change status!"/>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Vegan</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.vegan }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('items_set_vegan', item_id=item.id) }}">
+                <input type="submit" value="Change status!" />
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="{{ url_for('item_delete', item_id=item.id) }}">
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
