@@ -10,6 +10,9 @@ def items_form():
 @app.route("/items/", methods=["POST"])
 def items_create():
     form = ItemForm(request.form)
+
+    if not form.validate():
+        return render_template("items/new.html", form = form)
     
     i = Item(form.name.data)
     i.vegan = form.vegan.data
