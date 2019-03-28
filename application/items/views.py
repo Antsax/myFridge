@@ -1,15 +1,19 @@
 from application import app, db
 from flask import render_template, request, url_for, redirect
 from application.items.models import Item
+from application.items.forms import ItemForm
 
 @app.route("/items/new/")
 def items_form():
-    return render_template("items/new.html")
+    return render_template("items/new.html", form = ItemForm())
 
 @app.route("/items/", methods=["POST"])
 def items_create():
-    i = Item(request.form.get("name"))
+    form = ItemForm(request.form)
     
+    i = Item(form.name.data)
+    i.vegan = form.vegan.data
+
     db.session().add(i)
     db.session().commit()
 
