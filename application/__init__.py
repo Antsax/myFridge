@@ -23,5 +23,8 @@ from application import views
 from application.items import models
 from application.items import views
 
+## Luetaan kansiosta auth tiedoston models sisältö
+from application.auth import models
+
 # Luodaan lopulta tarvittavat tietokantataulut
 db.create_all()
