@@ -11,7 +11,8 @@
       <a href = "{{ url_for('auth_logout') }}">Log out</a>
     </p>
     {% else %}
-    <a href = "{{ url_for('auth_login') }}">Log in</a>
+    <a href = "{{ url_for('auth_login') }}">Log in <br \></a>
+    <a href = "{{ url_for('auth_register') }}">Register</a>
     {% endif %}
     <ul>
       <li><a href="{{ url_for('items_index') }}">List items</a></li>
