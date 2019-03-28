@@ -2,6 +2,8 @@
 from flask import Flask
 app = Flask(__name__)
 
+
+
 # Tuodaan SQLAlchemy käyttöön
 from flask_sqlalchemy import SQLAlchemy
 
@@ -16,6 +18,8 @@ app.config["SQLALCHEMY_ECHO"] = True
 # Luodaan db-olio, jota käytetään tietokannan käsittelyyn
 db = SQLAlchemy(app)
 
+
+
 # Luetaan kansiosta application tiedoston views sisältö
 from application import views
 
@@ -23,8 +27,9 @@ from application import views
 from application.items import models
 from application.items import views
 
-## Luetaan kansiosta auth tiedoston models sisältö
+# Luetaan kansiosta auth tiedoston models ja views sisältö
 from application.auth import models
+from application.auth import views
 
 # Luodaan lopulta tarvittavat tietokantataulut
 db.create_all()
