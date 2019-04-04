@@ -5,13 +5,13 @@
   Hello world!
 </p>
 
-{% if needs_tasks is defined %}
+{% if needs_items is defined %}
 <p>
   The following users don't have items:
 </p>
 
 <ul>
-  {% for user in needs_tasks %}
+  {% for user in needs_items %}
   <li>
     {{user.id}} {{user.name}}
   </li>

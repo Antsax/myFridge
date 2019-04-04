@@ -34,6 +34,10 @@ from application.items import views
 from application.auth import models
 from application.auth import views
 
+# Luetaan kansiosta reviews tiedoston models ja views sisältö
+from application.reviews import models
+from application.reviews import views
+
 
 # Lisätään kirjautumisen toiminallisuus
 from application.auth.models import User
