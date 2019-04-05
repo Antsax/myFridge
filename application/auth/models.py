@@ -36,7 +36,7 @@ class User(Base):
                     " LEFT JOIN Item ON Item.account_id = Account.id"
                     " WHERE (Item.vegan IS null OR Item.vegan = :vegan)"
                     " GROUP BY Account.id"
-                    " HAVING COUNT(Item.id) = 0").params(vegan=1)
+                    " HAVING COUNT(Item.id) = 0").params(vegan=True)
                 
         res = db.engine.execute(stmt)
 
