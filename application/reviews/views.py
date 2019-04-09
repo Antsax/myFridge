@@ -5,7 +5,7 @@ from application import app, db
 from application.reviews.models import Review
 from application.reviews.forms import ReviewFormItem
 
-@app.route("/review/<item_id>/", methods = ["POST"])
+@app.route("/review/<item_id>/", methods = ["GET"])
 @login_required
 def review_item(item_id):
     form = ReviewFormItem(request.form)
