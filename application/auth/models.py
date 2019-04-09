@@ -13,8 +13,10 @@ class User(Base):
 
     items = db.relationship("Item", backref='account', lazy = True)
 
-    def __init__(self, name):
+    def __init__(self, name, username, password):
         self.name = name
+        self.username = username
+        self.password = password
 
     def get_id(self):
         return self.id
@@ -29,12 +31,12 @@ class User(Base):
         return True
 
     @staticmethod
-    def find_users_with_no_items():
+    def find_users_with_no_items(vegan = True):
         stmt = text("SELECT Account.id, Account.name FROM ACCOUNT"
                     " LEFT JOIN Item ON Item.account_id = Account.id"
                     " WHERE (Item.vegan IS null OR Item.vegan = :vegan)"
                     " GROUP BY Account.id"
-                    " HAVING COUNT(Item.id) = 0").params(vegan=True)
+                    " HAVING COUNT(Item.id) = 0").params(vegan=vegan)
                 
         res = db.engine.execute(stmt)
 
