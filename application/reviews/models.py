@@ -10,7 +10,8 @@ class Review(Base):
     item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable = True)
     # recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'), nullable = True)
 
-    def __init__(self, title, rating, comment):
+    def __init__(self, title, rating, comment, item_id):
         self.title = title
         self.rating = rating
         self.comment = comment
+        self.item_id = item_id
