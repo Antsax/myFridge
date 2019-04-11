@@ -5,11 +5,11 @@ from application import app, db
 from application.reviews.models import Review
 from application.reviews.forms import ReviewFormItem
 
-@app.route("/review/<item_id>/new/", methods = ["GET", "POST"])
+@app.route("/review/new/<item_id>", methods = ["GET", "POST"])
 @login_required
 def review_item(item_id):
     if request.method == "GET":
-        return render_template("/reviews/reviewform.html", form = ReviewFormItem())
+        return render_template("/reviews/reviewform.html", form = ReviewFormItem(), item_id = item_id)
 
     form = ReviewFormItem(request.form)
 

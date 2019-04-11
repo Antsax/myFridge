@@ -21,7 +21,7 @@
             </form>
         </td>
         <td>
-            <form method="POST" action="{{ url_for('review_item', item_id=item.id) }}">
+            <form method="GET" action="{{ url_for('review_item', item_id=item.id) }}">
                 <input type="submit" value="Give review" />
             </form>
         </td>

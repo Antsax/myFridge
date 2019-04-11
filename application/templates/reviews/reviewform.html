@@ -2,7 +2,7 @@
 
 {% block body %}
 {{ error }}
-<form method="POST" action="{{ url_for('review_item') }}">
+<form method="POST" action="{{ url_for('review_item', item_id=item_id) }}">
     <table>
         <tr>
             <td>{{ form.title.label }}</td>
