@@ -15,4 +15,8 @@ jaa | jo
 
 [Tietokantakaavio](https://github.com/Antsax/myFridge/blob/master/documentation/images/UML.png)
 
+[Asennusohje](https://github.com/Antsax/myFridge/blob/master/documentation/asennusohje.md)
+
+[Käyttöohje](https://github.com/Antsax/myFridge/blob/master/documentation/kayttohje.md)
+
 
