@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2> {{ item_name }} </h2>
+
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Quality</th>
+        <th>Comment</th>
+    </tr>
+    {% for review in reviews %}
+
+    <tr>
+        <td>
+            {{ review.title }}
+            {{ review.rating }}
+            {{ review.comment }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

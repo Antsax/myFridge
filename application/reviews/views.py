@@ -22,3 +22,8 @@ def review_item(item_id):
     db.session().commit()
 
     return redirect(url_for("items_index"))
+
+@app.route("/review/<item_id>/<item_name>", methods = ["GET"])
+@login_required
+def review_view(item_id, item_name):
+    return render_template("reviews/review.html", reviews = Review.query.filter_by(item_id = item_id), item_name = item_name)

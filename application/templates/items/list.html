@@ -25,6 +25,11 @@
                 <input type="submit" value="Give review" />
             </form>
         </td>
+        <td>
+            <form method="GET" action="{{ url_for('review_view', item_id=item.id, item_name = item.name) }}">
+                <input type="submit" value="View reviews" />
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>
