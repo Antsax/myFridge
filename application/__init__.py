@@ -84,6 +84,9 @@ from application.auth import views
 from application.reviews import models
 from application.reviews import views
 
+# Luetaan kansiosta recipes tiedostot models ja views
+from application.recipes import models, views
+
 
 @login_manager.user_loader
 def load_user(user_id):
