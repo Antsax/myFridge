@@ -8,3 +8,8 @@ from application.recipes.forms import RecipeForm
 @app.route("/recipes/", methods = ["GET"])
 def recipes_index():
     return render_template("recipes/index.html", recipes = Recipe.query.all())
+
+@app.route("/recipes/<recipe_id>")
+@login_required
+def recipe_view(recipe_id):
+    
