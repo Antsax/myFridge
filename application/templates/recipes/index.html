@@ -1,1 +1,27 @@
 {% extends 'layout.html' %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>Recipe</th>
+    </tr>
+
+    <tr>
+        <td>
+            <form method="GET" action="{{ url_for('recipe_form') }}">
+                <input type="submit" value="Create a recipe!" />
+            </form>
+        </td>
+    </tr>
+    {% for recipe in recipes %}
+    <tr>
+        <td>{{ recipe.name }}</td>
+        <td>
+            <form method="GET" action="{{ url_for('recipe_view', recipe_id = recipe.id, recipe_name = recipe.name) }}">
+                <input type="submit" value="View recipe" />
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

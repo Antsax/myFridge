@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2> {{ recipe_name }} </h2>
+
+
+<table>
+    <tr>
+        <th>Instructions</th>
+        <th>Diet</th>
+        <th>Time in minutes</th>
+    </tr>
+
+    {% for recipe in recipes %}
+
+    <tr>
+        <td>
+            {{ recipe.instructions }}
+            {{ recipe.diet }}
+            {{ recipe.timeInMinutes }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

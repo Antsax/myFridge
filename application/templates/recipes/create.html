@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('recipe_form') }}">
+    <table>
+        <tr>
+            <td>{{ form.name.label }}</td>
+            <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.diet.label }}</td>
+            <td>{{ form.diet }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.timeInMinutes.label }}</td>
+            <td>{{ form.timeInMinutes }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.instructions.label }}</td>
+            <td>{{ form.instructions }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create recipe!" />
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
