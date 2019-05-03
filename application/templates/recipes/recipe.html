@@ -1,10 +1,14 @@
-{% extends "layout.html" %}
-
-{% block body %}
+{% extends "layout.html" %} {% block body %}
 
 <h2> {{ recipe_name }} </h2>
 
-
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
 <table>
     <tr>
         <th>Instructions</th>
@@ -17,7 +21,11 @@
     <tr>
         <td>
             {{ recipe.instructions }}
+        </td>
+        <td>
             {{ recipe.diet }}
+        </td>
+        <td>
             {{ recipe.timeInMinutes }}
         </td>
     </tr>
