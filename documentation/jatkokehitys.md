@@ -5,7 +5,6 @@
 - Resepteihin olisi voinut listata tuotteet, mitä siihen tarvitaan ja niiden määrät
 - Tuotteet olisi voinut sijoittaa omiin varastointipaikkoihin (esim. jääkaappi, pakastin, hylly)
 - Reseptien tekijät olisi voinut esittää
-- Vain reseptien lisääjä voi poistaa oman reseptin
 - Validointia ja autorotisointia olis voinut viilata
 
 ## CREATE TABLE -lauseet
