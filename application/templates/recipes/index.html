@@ -21,6 +21,11 @@
                 <input type="submit" value="View recipe" />
             </form>
         </td>
+        <td>
+            <form method="POST" action="{{ url_for('recipe_delete', recipe_id = recipe.id) }}">
+                <input type="submit" value="Delete recipe" />
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>

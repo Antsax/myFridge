@@ -30,3 +30,11 @@ def recipe_form():
     db.session().commit()
 
     return redirect(url_for("recipes_index"))
+
+@app.route("/recipes/<recipe_id>/delete", methods = ["POST"])
+@login_required
+def recipe_delete(recipe_id):
+    r = Recipe.query.get(recipe_id)
+    db.session.delete(r)
+    db.session.commit()
+    return redirect(url_for("recipes_index"))
